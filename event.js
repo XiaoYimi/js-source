@@ -2,10 +2,9 @@
  *   开发者: 晨风不可依米(筱依米)              *
  *   wechat: chenfengbukeyimi                *
  *   email: 2590856083@qq.com                *
- *   功能: Vue 框架                           *
- *       1. 事件绑定 on                       *
- *       2. 事件解绑 off                      *
- *       3. 事件触发 trigger                  *
+ *   功能  1. 事件绑定 on                     *
+ *         2. 事件解绑 off                    *
+ *         3. 事件触发 trigger                *
  *********************************************/
 
 class S_Event {
