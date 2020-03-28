@@ -44,6 +44,12 @@ function func (data) {
     data.name = data.name ? data.name : arguments.callee.name
     console.log(data)
 }
+
+// 绑定 clcik 事件
 ev.on('click', func)
-ev.on('click', func)
-ev.trigger('click')
+
+// 解绑 clcik 事件
+// ev.off('click', func)
+
+// 触发 clcik 事件,并执行回调 func
+ev.trigger('click', { name: 'chenfengbukeyimi' })
