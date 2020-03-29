@@ -1,3 +1,24 @@
+/**********************************************************
+ *   开发者: 晨风不可依米(筱依米)                           *
+ *   wechat: chenfengbukeyimi                             *
+ *   email: 2590856083@qq.com                             *
+ *   功能  1. 当前时间 now()                               *
+ *         2. 当前年份 currentYear()                       *
+ *         3. 当前月份 currentMonth()                      *
+ *         4. 当前月份某天 currentDate()                   *
+ *         5. 当前周几(数值) curentDay()                   *
+ *         6. 当前周几(字符) currentDayStr()               *
+ *         7. 当前时钟 currentHours()                      *
+ *         8. 当前分钟 currentMinutes()                    *
+ *         9. 当前秒钟 currentSeconds()                    *
+ *         10. 当前时间戳 currentTimes()                   *
+ *         11. 为个位数值添加前缀 '0' addZero()             *
+ *         12. 格式化时间(Y-M-D) formatDates()             *
+ *         13. 格式化时间(Y-M-D H-m-s) formatTimes()       *
+ *                                                        *      
+ *********************************************************/
+
+
 
 class S_Date {
     constructor () {
@@ -53,6 +74,13 @@ class S_Date {
         const seconds = this.addPreZero(current.getSeconds());
         return [year, month, date].join(splitor) + ' ' + [hours, minutes, seconds].join(':');
     }
+
+
+    
+
+
+
+
 }
 
 const d = new S_Date();
