@@ -193,6 +193,17 @@ class S_Array {
         return arr;
     }
 
+    // 数组分组(byte 组内个数)
+    split_group (arr, byte) {
+        const narr = [];
+        const len = arr.length;
+        if (len <= byte) { return narr.push(arr); }
+        const times = Math.ceil(len / byte)
+        for (let i=0; i<times; i++) {
+            i !== times ? narr.push(arr.slice(i * byte, (i+1) * byte)) : narr.push(arr.slice(i * byte));
+        }
+        return narr;
+    }
 
 
 
