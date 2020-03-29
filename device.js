@@ -5,6 +5,12 @@
  *   功能  1. 获取设备浏览器信息 getBrowserInfo()       *
  *         2. 进入全屏 enterFullScreen                 *
  *         3. 退出全屏 exitFullScreen                  *
+ *         4. 禁用鼠标右键 banRightMenu()              *
+ *         5. 启用鼠标右键 useRightMenu()              *
+ *         6. 禁用复制功能 banCopy()                   *
+ *         7. 启用复制功能 useCopy()                   *
+ *         8. 禁用鼠标选取功能 banSelect()              *
+ *         9. 启用鼠标选取功能 useSelect()              *
  ******************************************************/
 
 
@@ -126,9 +132,6 @@ class S_Device {
     }
 
     
-
-
-
 }
 
 const device = new S_Device();
