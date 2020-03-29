@@ -50,7 +50,7 @@ class S_Array {
         return Array.isArray(arr);
     }
 
-    tip () { return console.log('arr of arguments is not an array type value'); }
+    tip () { return console.log('arr of arguments is not an Array type value'); }
     
     asc (m, n) { return m - n; }
 
