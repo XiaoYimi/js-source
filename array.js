@@ -29,6 +29,10 @@
  *      数组极小值  =>  extremum_min()                          *
  *      数组极大值  =>  extremum_max()                          *
  *                                                             *
+ *                                                             *
+ *    total  求数组总数                                         *
+ *    average  求数组平均数                                     *
+ *                                                             *
  *                                                             *       
  *   以下加强项                                                 *
  *                                                             *
@@ -220,6 +224,16 @@ class S_Array {
     extremum_max (arr) {
         if (!this.isArray(arr)) { return this.tip(); }
         return Math.max.apply(Math, arr);
+    }
+
+    total (arr) {
+        if (!this.isArray(arr)) { return this.tip(); }
+        return arr.reduce((prev, next) => { return prev + next; });
+    }
+
+    average (arr) {
+        const total = arr.reduce((prev, next) => { return prev + next; });
+        return total / arr.length;
     }
 
 
