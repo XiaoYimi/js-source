@@ -1,46 +1,51 @@
 
 
-/*******************************************************
- *    开发者: 晨风不可依米 (wechat: chenfengbukeyimi)    *
- *                                                     *
- *    sorting: 对数组进行排序,并返回数组                 *
- *      JS 原生排序  =>  sort()                         *
- *      冒泡法排序  =>  bubbling()                      *
- *      选择法排序  =>  select()                        *
- *      插入法排序  =>  insert()                        *
- *      快速法排序  =>  quick()                         *
- *                                                     *
- *                                                     *
- *    unipid: 对数组进行去重,并返回数组                  *
- *       ES6 常用去重(Array.from, Set)  =>  es6()       *  
- *       ES6 new Set去重  =>  set()                    *
- *       ES6 includes 反向去重  =>  unincludes()        *
- *       ES5 常用去重(双for遍历)  =>  es5()             *
- *       Array indexOf 配合去重  =>  indexof()          *
- *                                                     *
- *                                                     *
- *    upset: 对数组顺序进行打乱,并返回数组                *
- *       随机数组下标值替换位置 => randomIndex()         *
- *                                                     *
- *                                                     *
- *   以下加强项                                         *
- *                                                     *
- *    数组迭代与归并方法                                 *
- *    Array.filter()                                   *
- *    Array.forEach()                                  *
- *    Array.reduce()                                   *
- *    Array.map()                                      *
- *    Array.some()                                     *
- *    Array.every()                                    *
- *                                                     *
- *                                                     *
- *    数组栈方法 (push, pop)                            *
- *    数组队列方法 (shift, unshift)                     *
- *    数组操作方法 (splice)                             *
- *    数组分割与拼接方法 (split, join)                   *
- *                                                     *
- *                                                     *
- *******************************************************/
+/***************************************************************
+ *    开发者: 晨风不可依米 (wechat: chenfengbukeyimi)            *
+ *                                                             *
+ *    sorting: 对数组进行排序,并返回数组                         *
+ *      JS 原生排序  =>  sorting_sort()                         *
+ *      冒泡法排序  =>  sorting_bubbling()                      *
+ *      选择法排序  =>  sorting_select()                        *
+ *      插入法排序  =>  sorting_insert()                        *
+ *      快速法排序  =>  sorting_quick()                         *
+ *                                                             *
+ *                                                             *
+ *    unipid: 对数组进行去重,并返回数组                          *
+ *       ES6 常用去重(Array.from, Set)  =>  unipid_es6()        *  
+ *       ES6 new Set去重  =>  unipid_set()                      *
+ *       ES6 includes 反向去重  =>  unipid_includes()           *
+ *       ES5 常用去重(双for遍历)  =>  unipid_es5()               *
+ *       Array indexOf 配合去重  =>  unipid_indexof()           *
+ *                                                             *
+ *                                                             *
+ *    upset: 对数组顺序进行打乱,并返回数组                        *
+ *       随机数组下标值替换位置 => upset_random()                *
+ *                                                             *
+ *    split: 对数组进行分割成组,并返回数组                        *
+ *       通过 n/组 进行分割成组  =>  split_group()               *
+ *                                                             *
+ *    extremum： 求解数组极值(最大|小)                           *
+ *      数组极小值  =>  extremum_min()                          *
+ *      数组极大值  =>  extremum_max()                          *
+ *                                                             *
+ *                                                             *       
+ *   以下加强项                                                 *
+ *                                                             *
+ *    数组迭代与归并方法                                         *
+ *    Array.filter()                                           *
+ *    Array.forEach()                                          *
+ *    Array.reduce()                                           *
+ *    Array.map()                                              *
+ *    Array.some()                                             *
+ *    Array.every()                                            *
+ *                                                             *
+ *    数组栈方法 (push, pop)                                    *
+ *    数组队列方法 (shift, unshift)                             *
+ *    数组操作方法 (splice,slice)                               *
+ *    数组分割与拼接方法 (split, join)                           *
+ *                                                             *
+ ***************************************************************/
 
 class S_Array {
 
@@ -195,6 +200,7 @@ class S_Array {
 
     // 数组分组(byte 组内个数)
     split_group (arr, byte) {
+        if (!this.isArray(arr)) { return this.tip(); }
         const narr = [];
         const len = arr.length;
         if (len <= byte) { return narr.push(arr); }
@@ -203,6 +209,17 @@ class S_Array {
             i !== times ? narr.push(arr.slice(i * byte, (i+1) * byte)) : narr.push(arr.slice(i * byte));
         }
         return narr;
+    }
+
+
+    extremum_min (arr) {
+        if (!this.isArray(arr)) { return this.tip(); }
+        return Math.min.apply(Math, arr);
+    }
+
+    extremum_max (arr) {
+        if (!this.isArray(arr)) { return this.tip(); }
+        return Math.max.apply(Math, arr);
     }
 
 
